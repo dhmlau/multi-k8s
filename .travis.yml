@@ -14,11 +14,11 @@ after_success:
   - docker build -t dhmlau/multi-server ./server
   - docker build -t dhmlau/multi-worker ./worker
 
-# Log in to the docker CLI
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-# Take those images and push them to docker hub
-- docker push dhmlau/multi-client
-- docker push dhmlau/multi-nginx
-- docker push dhmlau/multi-server
-- docker push dhmlau/multi-worker
+  # Take those images and push them to docker hub
+  - docker push dhmlau/multi-client
+  - docker push dhmlau/multi-nginx
+  - docker push dhmlau/multi-server
+  - docker push dhmlau/multi-worker
